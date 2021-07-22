@@ -3,7 +3,7 @@
 The pytorch implement for CasRel 2020 ACL: A Novel Cascade Binary Tagging Framework for Relational Triple Extraction
 
 ### 模型结构
-<img src="./img/casrel.png" align="bottom" />
+<img src="./imgs/casrel.png" align="bottom" />
 
 ### 项目环境配置
 
