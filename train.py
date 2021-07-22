@@ -1,5 +1,5 @@
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "7"
+os.environ["CUDA_VISIBLE_DEVICES"] = "6"
 import config
 import framework
 import argparse
@@ -21,7 +21,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--model_name', type=str, default='Casrel', help='name of the model')
 parser.add_argument('--lr', type=float, default=1e-5)
 parser.add_argument('--multi_gpu', type=bool, default=False)
-parser.add_argument('--dataset', type=str, default='MAMS')
+parser.add_argument('--dataset', type=str, default='NYT')
 parser.add_argument('--batch_size', type=int, default=6)
 parser.add_argument('--max_epoch', type=int, default=15) #300
 parser.add_argument('--test_epoch', type=int, default=1)

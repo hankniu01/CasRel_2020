@@ -50,7 +50,7 @@ class CMEDDataset(Dataset):
         if not self.is_test:
             s2ro_map = {}
             for triple in ins_json_data['triple_list']:
-                triple = (self.tokenizer.tokenize(triple[0])[1:-1], triple[1], self.tokenizer.tokenize(triple[2])[1:-1])
+                triple = (self.tokenizer.tokenize(triple[0]), triple[1], self.tokenizer.tokenize(triple[2]))
                 sub_head_idx = find_head_idx(tokens, triple[0])
                 obj_head_idx = find_head_idx(tokens, triple[2])
                 if sub_head_idx != -1 and obj_head_idx != -1:
