@@ -8,8 +8,9 @@ class Casrel(nn.Module):
         super(Casrel, self).__init__()
         self.config = config
         self.bert_dim = 768
-        self.bert_encoder = BertModel.from_pretrained("hfl/chinese-bert-wwm",
-                                                      cache_dir='the path of your pre-train bert cache')
+        # self.bert_encoder = BertModel.from_pretrained("hfl/chinese-bert-wwm",
+        #                                               cache_dir='the path of your pre-train bert cache')
+        self.bert_encoder = BertModel.from_pretrained('bert-base-uncased')                                                    
         self.sub_heads_linear = nn.Linear(self.bert_dim, 1)
         self.sub_tails_linear = nn.Linear(self.bert_dim, 1)
         self.obj_heads_linear = nn.Linear(self.bert_dim, self.config.rel_num)

@@ -1,9 +1,11 @@
-from keras_bert import Tokenizer
+# from keras_bert import Tokenizer
+# from transformers import Tokenizer
 import codecs
 import unicodedata
 
 
-class HBTokenizer(Tokenizer):
+# class HBTokenizer(Tokenizer):
+class HBTokenizer(object):
     def _tokenize(self, text):
         if not self._cased:
             text = unicodedata.normalize('NFD', text)

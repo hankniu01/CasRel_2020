@@ -14,7 +14,7 @@ class Config(object):
         self.dataset = args.dataset
 
         # path and name
-        self.root = '/home/data_ti5_d/longsy/CasRel-reimplement'
+        self.root = '/home/niuhao/project/RE/CasRel_2020'
         self.data_path = self.root + '/data/' + self.dataset
         self.checkpoint_dir = self.root + '/checkpoint/' + self.dataset
         self.log_dir = self.root + '/log/' + self.dataset
