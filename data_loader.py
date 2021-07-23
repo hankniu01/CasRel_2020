@@ -108,14 +108,15 @@ def cmed_collate_fn(batch):
     token_ids, masks, text_len, sub_heads, sub_tails, sub_head, sub_tail, obj_heads, obj_tails, triples, tokens = zip(*batch)
     cur_batch = len(batch)
     max_text_len = max(text_len)
+    rel_num = obj_heads[0].shape[-1]
     batch_token_ids = torch.LongTensor(cur_batch, max_text_len).zero_()
     batch_masks = torch.LongTensor(cur_batch, max_text_len).zero_()
     batch_sub_heads = torch.Tensor(cur_batch, max_text_len).zero_()
     batch_sub_tails = torch.Tensor(cur_batch, max_text_len).zero_()
     batch_sub_head = torch.Tensor(cur_batch, max_text_len).zero_()
     batch_sub_tail = torch.Tensor(cur_batch, max_text_len).zero_()
-    batch_obj_heads = torch.Tensor(cur_batch, max_text_len, 44).zero_()
-    batch_obj_tails = torch.Tensor(cur_batch, max_text_len, 44).zero_()
+    batch_obj_heads = torch.Tensor(cur_batch, max_text_len, rel_num).zero_()
+    batch_obj_tails = torch.Tensor(cur_batch, max_text_len, rel_num).zero_()
 
     for i in range(cur_batch):
         batch_token_ids[i, :text_len[i]].copy_(torch.from_numpy(token_ids[i]))
