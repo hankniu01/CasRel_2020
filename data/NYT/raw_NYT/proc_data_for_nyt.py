@@ -69,7 +69,7 @@ def load_data(in_file, word_dict, rel_dict, out_file):
 
 if __name__ == '__main__':
     file_name = '/home/niuhao/project/RE/CasRel_2020/data/NYT/raw_NYT/train.json'
-    output = '/home/niuhao/project/RE/CasRel_2020/data/NYT/train.pkl'
+    output = '/home/niuhao/project/RE/CasRel_2020/data/NYT/train_triples.pkl'
     # output_normal = 'new_valid_normal.json'
     # output_epo = 'new_valid_epo.json'
     # output_seo = 'new_valid_seo.json'
@@ -81,9 +81,9 @@ if __name__ == '__main__':
     load_data(file_name, word_dict, rel_dict, output)
 
     file_name = '/home/niuhao/project/RE/CasRel_2020/data/NYT/raw_NYT/test.json'
-    output = '/home/niuhao/project/RE/CasRel_2020/data/NYT/test.pkl'
+    output = '/home/niuhao/project/RE/CasRel_2020/data/NYT/test_triples.pkl'
     load_data(file_name, word_dict, rel_dict, output)
 
     file_name = '/home/niuhao/project/RE/CasRel_2020/data/NYT/raw_NYT/valid.json'
-    output = '/home/niuhao/project/RE/CasRel_2020/data/NYT/valid.pkl'
+    output = '/home/niuhao/project/RE/CasRel_2020/data/NYT/dev_triples.pkl'
     load_data(file_name, word_dict, rel_dict, output)
